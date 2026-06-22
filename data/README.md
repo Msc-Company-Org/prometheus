@@ -70,5 +70,5 @@ outbound reply.
 ---
 
 > Reference dataset by **MSC Labs** — done-for-you custom model training.
-> Want this for your task? → Book a free model audit: https://msc-labs-ai.vercel.app/assessment
+> Want this for your task? → Book a free model audit: https://labs.msccompany.com.br/assessment
 > Numbers and samples are illustrative reference material from our standard eval harness.
