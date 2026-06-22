@@ -80,3 +80,13 @@ not distributed.
 > Reference model by **MSC Labs** — done-for-you custom model training.
 > Want this for your task? → Book a free model audit: https://labs.msccompany.com.br/assessment
 > Numbers are illustrative reference results from our standard eval harness.
+
+---
+
+## 🚀 Built by MSC Labs
+
+A public reference from **MSC Labs** — we fine-tune and ship custom LLMs (QLoRA/SFT) with managed inference, benchmarked against frontier-API baselines.
+
+**→ [Train your own model with MSC Labs](https://labs.msccompany.com.br/?utm_source=github&utm_medium=readme&utm_campaign=oss-authority-2026&utm_content=prometheus)**
+
+⭐ *Star this repo if it helps — it keeps the reference models coming.*
