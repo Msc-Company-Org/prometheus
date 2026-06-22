@@ -1,0 +1,63 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+.python-version
+
+# Notebooks
+.ipynb_checkpoints/
+
+# ML / training artifacts
+outputs/
+checkpoints/
+runs/
+logs/
+wandb/
+*.ckpt
+*.pt
+*.pth
+*.bin
+*.safetensors
+*.gguf
+adapter_model/
+merged/
+
+# Datasets (only sample.jsonl is tracked)
+data/*.jsonl
+!data/sample.jsonl
+data/train.jsonl
+data/dev.jsonl
+data/test.jsonl
+*.parquet
+*.arrow
+
+# Caches
+.cache/
+.hf_cache/
+.huggingface/
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+
+# Env / secrets
+.env
+.env.*
+!.env.example
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

@@ -1,0 +1,71 @@
+{
+  "model": "prometheus-support-8b",
+  "base_model": "meta-llama/Llama-3.1-8B-Instruct",
+  "method": "QLoRA",
+  "task": "customer-support-reply-generation",
+  "domain": "b2b-saas-fintech",
+  "baseline": "gpt-4o-2024-08-06",
+  "label": "Illustrative reference results from the MSC Labs eval harness.",
+  "test_set": {
+    "name": "prometheus-support-test",
+    "size": 1200,
+    "blind_side_by_side": true,
+    "raters": 4,
+    "rater_role": "support_leads",
+    "inter_rater_kappa": 0.71
+  },
+  "metrics": {
+    "human_pref_win_rate": 0.94,
+    "win_rate_breakdown": {
+      "prometheus_preferred": 0.916,
+      "tie": 0.048,
+      "gpt4o_preferred": 0.036
+    },
+    "grounding_error_rate": {
+      "gpt4o": 0.061,
+      "prometheus": 0.014
+    },
+    "tone_brand_fit_1to5": {
+      "gpt4o": 3.6,
+      "prometheus": 4.6
+    },
+    "refusal_correctness": {
+      "gpt4o": 0.88,
+      "prometheus": 0.96
+    },
+    "rouge_l_vs_gold": {
+      "gpt4o": 0.41,
+      "prometheus": 0.57
+    },
+    "bertscore_f1_vs_gold": {
+      "gpt4o": 0.86,
+      "prometheus": 0.91
+    }
+  },
+  "cost": {
+    "unit": "usd_per_1k_requests",
+    "tokens_per_request": { "input_avg": 540, "output_avg": 110 },
+    "gpt4o": 9.20,
+    "prometheus": 0.41,
+    "cost_reduction_x": 22.4
+  },
+  "latency_ms": {
+    "gpt4o": { "p50": 1910, "p95": 4300 },
+    "prometheus": { "p50": 430, "p95": 910 }
+  },
+  "training": {
+    "protocol": "2-stage",
+    "stage1_smoke": { "rows": 1000, "epochs": 1, "eval_loss_gate": 1.15 },
+    "stage2_full": { "rows": 37400, "epochs": 3, "approx_gpu_hours": 6, "gpu": "1x80GB" },
+    "lora": { "r": 16, "alpha": 32, "dropout": 0.05 },
+    "learning_rate": 0.0002,
+    "effective_batch_size": 64,
+    "max_seq_len": 4096
+  },
+  "serving": {
+    "engine": "vllm",
+    "gpu": "1x80GB",
+    "quantization": "4bit-nf4",
+    "sustained_req_per_s": 38
+  }
+}
